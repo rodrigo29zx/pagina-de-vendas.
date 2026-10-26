@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salve Seu Negócio com o Digital em 7 Dias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#13222E; --muted:#51626F; --line:#D8E0E7;
+  --door:#1B5AA6; --door-ink:#FFFFFF; --sign:#FFC62E; --sign-ink:#2B2100; --off:#8A97A2;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1A23; --surface:#172633; --ink:#EEF3F7; --muted:#9FB0BD; --line:#2A3C4A;
+    --door:#5C9BE6; --door-ink:#07121D; --sign:#FFC62E; --sign-ink:#2B2100; --off:#566672;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1A23; --surface:#172633; --ink:#EEF3F7; --muted:#9FB0BD; --line:#2A3C4A;
+  --door:#5C9BE6; --door-ink:#07121D; --sign:#FFC62E; --sign-ink:#2B2100; --off:#566672;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+section{padding:44px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0 0 14px;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,8.5vw,3rem);font-weight:800}
+h2{font-size:clamp(1.55rem,6vw,2.1rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.hero{padding-top:36px}
+.sub{font-size:1.1rem;color:var(--muted);max-width:34em}
+.btn{display:block;text-align:center;background:var(--door);color:var(--door-ink);font-family:var(--head);font-weight:800;font-size:1.15rem;text-decoration:none;padding:17px 22px;border-radius:12px;margin-top:22px}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,.sign:focus-visible,summary:focus-visible{outline:3px solid var(--sign);outline-offset:3px}
+.note{font-size:.92rem;color:var(--muted);margin-top:10px;text-align:center}
+.sign{display:block;width:100%;max-width:300px;margin:26px 0 8px;padding:20px 16px;border:4px solid var(--off);border-radius:16px;background:var(--surface);color:var(--off);font-family:var(--head);font-weight:800;font-size:2.1rem;letter-spacing:.06em;cursor:pointer;transition:all .25s}
+.sign[aria-pressed="true"]{border-color:var(--sign);background:var(--sign);color:var(--sign-ink);box-shadow:0 0 28px rgba(255,198,46,.55)}
+.hint{font-size:.9rem;color:var(--muted);margin:0}
+.days{list-style:none;margin:20px 0 0;padding:0;counter-reset:d}
+.days li{counter-increment:d;position:relative;padding:0 0 18px 52px}
+.days li::before{content:counter(d);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--door);color:var(--door-ink);font-family:var(--head);font-weight:800;display:grid;place-items:center}
+.days li::after{content:"";position:absolute;left:17px;top:40px;bottom:4px;width:2px;background:var(--line)}
+.days li:last-child::after{display:none}
+.days b{display:block;font-family:var(--head);font-size:1.05rem}
+.days span{color:var(--muted);font-size:.97rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+ul.ok{list-style:none;padding:0;margin:0}
+ul.ok li{padding:6px 0 6px 28px;position:relative}
+ul.ok li::before{content:"✓";position:absolute;left:0;color:var(--door);font-weight:800}
+ul.no li::before{content:"–";color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--muted)}
+.price{font-family:var(--head);font-weight:800;font-size:3.2rem;line-height:1;margin:6px 0}
+.offer{border:2px solid var(--door);border-radius:18px;padding:26px 20px;background:var(--surface)}
+footer{padding:28px 0 40px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.sign{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<section class="hero"><div class="wrap">
+  <h1>Seu cliente está no celular. Seu negócio também precisa estar.</h1>
+  <p class="sub">Um guia passo a passo, com 30 a 40 minutos por dia, para ser encontrado no Google, atender pelo WhatsApp e voltar a vender. Sem site caro, sem anúncio e sem entender de tecnologia.</p>
+  <button class="sign" id="sign" type="button" aria-pressed="false" aria-label="Placa do negócio: fechado. Toque para abrir.">FECHADO</button>
+  <p class="hint">Toque na placa para abrir o seu negócio.</p>
+  <a class="btn" href="#oferta">Quero começar hoje</a>
+  <p class="note">E-book digital com acesso imediato</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Se as vendas caíram, o problema talvez não seja o seu trabalho.</h2>
+  <p>Seus clientes mudaram de lugar. Eles procuram, comparam e compram pelo celular.</p>
+  <p>Quem aparece no Google, responde rápido no WhatsApp e mostra o trabalho no Instagram vende. Quem não aparece vê o movimento cair, mesmo fazendo tudo certo na porta da loja.</p>
+  <p>Você não está sozinho nisso, e dá para resolver sem gastar uma fortuna.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Em 7 dias, uma tarefa por dia</h2>
+  <p class="muted">Cada dia tem objetivo, passo a passo, missão e checklist. Você usa o seu negócio real, então tudo o que fizer já fica funcionando.</p>
+  <ol class="days">
+    <li><b>Pare a sangria</b><span>Apareça no Google e no Maps quando alguém buscar “perto de mim”.</span></li>
+    <li><b>Primeiro Pix</b><span>WhatsApp Business com catálogo, mensagens automáticas e contato com clientes antigos.</span></li>
+    <li><b>Vitrine aberta</b><span>Instagram profissional pronto em 40 minutos.</span></li>
+    <li><b>Atraia quem não te conhece</b><span>Conteúdo simples, 15 ideias e modelos de legenda.</span></li>
+    <li><b>Reative o caixa</b><span>Avaliações, ofertas para clientes antigos e indicações.</span></li>
+    <li><b>Oferta irresistível</b><span>Pix, link de pagamento e entrega para vender além da sua porta.</span></li>
+    <li><b>Negócio blindado</b><span>Rotina de 15 minutos por dia e plano dos próximos 30 dias.</span></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Descubra a nota do seu negócio</h2>
+  <div class="box">
+    <p>No começo você responde 10 perguntas e descobre onde está: <b>Zona de Alerta</b>, <b>Em Reconstrução</b> ou <b>Quase Lá</b>.</p>
+    <p style="margin:0">No Dia 7 você refaz o teste e vê, com números, o quanto evoluiu. Você sempre sabe qual é o próximo passo.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>O que vem no guia</h2>
+  <ul class="ok">
+    <li>Passo a passo com checklist em cada dia</li>
+    <li>Scripts de WhatsApp prontos para copiar</li>
+    <li>Modelos de legenda e 15 ideias de conteúdo</li>
+    <li>Diagnóstico para comparar o antes e o depois</li>
+    <li>Plano dos próximos 30 dias</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Para quem é</h2>
+  <p>Donos de negócios locais e simples, como salões, restaurantes, lojas, oficinas, clínicas e prestadores de serviço, que querem vender mais pela internet.</p>
+  <h3>Não é para quem</h3>
+  <ul class="ok no">
+    <li>espera resultado sem colocar nada em prática</li>
+    <li>procura uma fórmula de dinheiro fácil</li>
+  </ul>
+</div></section>
+
+<section id="oferta"><div class="wrap">
+  <div class="offer">
+    <h2>Salve Seu Negócio com o Digital em 7 Dias</h2>
+    <p class="muted" style="margin-bottom:4px">Pagamento único</p>
+    <div class="price">R$ 37</div>
+    <ul class="ok" style="margin-top:14px">
+      <li>Acesso imediato ao e-book</li>
+      <li>Garantia de 7 dias</li>
+    </ul>
+    <a class="btn" id="buy" href="https://pay.kiwify.com.br/fGavZi5">Quero o guia agora</a>
+    <p class="note">Pagamento seguro pela Kiwify</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Perguntas frequentes</h2>
+  <details><summary>Preciso entender de tecnologia?</summary><p>Não. Tudo é explicado em passos simples, feitos pelo celular.</p></details>
+  <details><summary>Preciso pagar anúncio ou ter site?</summary><p>Não. O guia usa ferramentas gratuitas: Google, WhatsApp Business e Instagram.</p></details>
+  <details><summary>Quanto tempo preciso por dia?</summary><p>De 30 a 40 minutos durante 7 dias. Depois, uma rotina de 15 minutos por dia.</p></details>
+  <details><summary>Como recebo o guia?</summary><p>Logo após a confirmação do pagamento, você recebe o acesso por e-mail.</p></details>
+  <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Se não for para você, pode pedir o reembolso pela Kiwify.</p></details>
+  <details><summary>O guia garante que vou vender mais?</summary><p>Não existe garantia de faturamento. O guia entrega a estrutura e o passo a passo, e o resultado depende do seu negócio, da sua região, do seu atendimento e da sua dedicação.</p></details>
+  <details><summary>E se eu travar no meio do caminho?</summary><p>No final do guia você encontra o meu WhatsApp para um diagnóstico gratuito do seu negócio.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Este material é um guia prático e educativo. Os resultados variam conforme o negócio e a dedicação de cada pessoa, e não há garantia de faturamento específico.</p>
+</div></footer>
+
+<script>
+(function(){
+  var sign=document.getElementById('sign');
+  sign.addEventListener('click',function(){
+    var on=sign.getAttribute('aria-pressed')!=='true';
+    sign.setAttribute('aria-pressed',on?'true':'false');
+    sign.textContent=on?'ABERTO':'FECHADO';
+    sign.setAttribute('aria-label','Placa do negócio: '+(on?'aberto':'fechado')+'. Toque para '+(on?'fechar':'abrir')+'.');
+  });
+})();
+</script>
+</body>
+</html>
